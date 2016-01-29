@@ -26,3 +26,9 @@ ExportedObj/
 sysinfo.txt
 Old Gods of the Forest/Library/metadata/
 Old Gods of the Forest/Temp/
+
+*.bin
+
+Old Gods of the Forest/player_win_x86_s.pdb
+
+Old Gods of the Forest/player_win_x86.pdb
