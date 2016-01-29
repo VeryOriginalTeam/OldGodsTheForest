@@ -21,9 +21,11 @@ public class evntManager : MonoBehaviour {
 	}
 
 	bool AddParticle(Particle part){
+		return true;
 	}
 
 	bool RemoveParticle(Particle part){
+		return true;
 	}
 
 }
