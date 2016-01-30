@@ -19,7 +19,9 @@ public class movement : MonoBehaviour {
 	private Rigidbody2D rb2d;
 	private bool hit = false;
 	private float hitTimer = 0.0f;
-	public float hitTime = 3.0f;
+	public float hitTime = 1.0f;
+	private bool run = false;
+	private bool crouch = false;
 	
 	// Use this for initialization
 	void Start () {
@@ -32,9 +34,20 @@ public class movement : MonoBehaviour {
 	void FixedUpdate()
 	{
 		float h = Input.GetAxis("Horizontal");
-		
+		float v = Input.GetAxis ("Vertical");
+		if (v < 0) {
+			crouch = true;
+		} else {
+			crouch=false;
+		}
 		anim.SetFloat("Speed", Mathf.Abs(h));
-		
+		if (Mathf.Abs (h) > 0.1f) {
+			run = true;
+			anim.SetBool("run",true);
+		} else {
+			run =false;
+			anim.SetBool("run",false);
+		}
 		if (h * rb2d.velocity.x < maxSpeed)
 			rb2d.AddForce(Vector2.right * h * moveForce);
 		
