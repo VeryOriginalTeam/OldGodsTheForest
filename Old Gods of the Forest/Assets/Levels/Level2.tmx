@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="64" tileheight="64" nextobjectid="1">
+ <tileset firstgid="1" name="tileset_tuonela2" tilewidth="64" tileheight="64">
+  <image source="Nimetön kansio/Old Gods of the Forest/Assets/graphics/tileset_tuonela2.png" width="642" height="322"/>
+ </tileset>
+ <tileset firstgid="51" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="Nimetön kansio/Old Gods of the Forest/Assets/graphics/tileset_tuonela.png" width="706" height="322"/>
+ </tileset>
+ <tileset firstgid="106" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="Nimetön kansio/Old Gods of the Forest/Assets/graphics/tileset_tuonela.png" width="769" height="322"/>
+ </tileset>
+ <layer name="Alus-Vesi" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMAqGD2BlYEiQZGBYAKQXDLRbRgH1QSmJeKDsBQAh1Ay8
+  </data>
+ </layer>
+ <layer name="Tile Layer 4" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFhIA2A0MCCDMSUMfCwLAAiBOoZa8NA8MBJiAWJcEOkLwkEqaWWygFtkAsMdCOGAWjYBSMglEwCugEANHeCB8=
+  </data>
+ </layer>
+ <layer name="Tile Layer 1" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYEAF2gwDA0btxQTFDAwHBsJeWgCQvRIDZC8hIDOM7CUGYLM3mIEhQRsJB5NptjaaOYSwDRAzA/UxQ/QuWAKkWYE0MXYB9S5gAuYRUjDIDmQcTKRdIPdxQO0kVg81AC3tBIZzgiTQXGzhTW9/DkUgCkxPjANgLzDdHgDGDwMTFJPjBmT9xGJYXmVngKRLUBknRyLmgOqHmQMzC9lcdjzq2Mm0F9kcWHmDzS5kd8AwMwX2AgCvdSzA
+  </data>
+ </layer>
+ <layer name="tilelayer" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjZmBgYEbC9ALMDEPD3mAGhgR628sKtHMpNSwlwl4WBoYFQPsWIItJ0sheCQJ6aGUvPcBgsdeGAZxm6W4vzG58QAstnVFq7ygYBaNgFAxmAAAxWwVq
+  </data>
+ </layer>
+</map>
