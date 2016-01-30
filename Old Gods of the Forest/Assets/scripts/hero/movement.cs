@@ -19,10 +19,12 @@ public class movement : MonoBehaviour {
 	private Rigidbody2D rb2d;
 	private bool hit = false;
 	private float hitTimer = 0.0f;
-	public float hitTime = 1.0f;
+	public float hitTime = 0.5f;
+	private float landingTimer = 0.0f;
+	public float landingTime = 1.0f;
 	private bool run = false;
 	private bool crouch = false;
-	
+
 	// Use this for initialization
 	void Start () {
         //Get the starting position from EventManager.
@@ -37,8 +39,10 @@ public class movement : MonoBehaviour {
 		float v = Input.GetAxis ("Vertical");
 		if (v < 0) {
 			crouch = true;
+			anim.SetBool("crouch",true);
 		} else {
 			crouch=false;
+			anim.SetBool("crouch",false);
 		}
 		anim.SetFloat("Speed", Mathf.Abs(h));
 		if (Mathf.Abs (h) > 0.1f) {
@@ -99,7 +103,7 @@ public class movement : MonoBehaviour {
 
 
 		if (hitTimer > 0) {
-			hitTimer -= hitTime;
+			hitTimer -= Time.deltaTime;
 			if(hitTimer<= 0)
 			{
 				hit=false;
@@ -107,10 +111,29 @@ public class movement : MonoBehaviour {
 			}
 		}
 
+		if (landingTimer > 0) {
+			landingTimer -= Time.deltaTime;
+			if(landingTimer<= 0)
+			{
+				hit=false;
+				anim.SetBool ("landing",false);
+			}
+		}
+
 		bool groundedBefore = grounded;
 		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+
 		if (groundedBefore != grounded && grounded == true) {
 			jumpCounter=0;
+			anim.SetBool("landing",true);
+			landingTimer = landingTime;
+		}
+
+		
+		if (grounded) {
+			anim.SetBool("jump",false);
+		}else{
+			anim.SetBool("jump",true);
 		}
 
 		if (Input.GetButtonDown("Jump")&& (grounded || (!jump &&doubleJumpEnabled && jumpCounter <2)))
@@ -118,6 +141,7 @@ public class movement : MonoBehaviour {
 			jumpTimer = jumpTime;
 			jumpCounter++;
 			jump = true;
+
 		}
 		if(Input.GetButtonUp("Jump"))
 		{
