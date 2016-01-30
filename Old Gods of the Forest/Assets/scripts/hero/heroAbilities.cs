@@ -14,7 +14,7 @@ public class heroAbilities : MonoBehaviour {
 	void Update () {
 	
 	}
-    void OnCollisionEnter(Collision2D col)
+    void OnCollisionEnter(Collision col)
     {
         switch (col.gameObject.tag)
         {
