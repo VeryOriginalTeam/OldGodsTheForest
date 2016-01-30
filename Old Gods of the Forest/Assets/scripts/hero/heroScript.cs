@@ -6,8 +6,6 @@ public class heroScript : MonoBehaviour {
     private int health;
     private int maxHealth;
 
-
-
     public int Health
     {
         get { return health; }
@@ -27,7 +25,10 @@ public class heroScript : MonoBehaviour {
         health = maxHealth;
 	}
 
-
+    void Update()
+    {
+       
+    }
     public void DamageHero(int amount)
     {
         health = health - amount;
@@ -39,7 +40,6 @@ public class heroScript : MonoBehaviour {
         health = health + amount;
         if (health > maxHealth) health = maxHealth;
     }
-
 	
 
 

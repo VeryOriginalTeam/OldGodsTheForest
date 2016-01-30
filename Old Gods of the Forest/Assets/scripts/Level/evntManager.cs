@@ -14,12 +14,19 @@ public class evntManager : MonoBehaviour {
 	private GameObject hero;
     private heroScript hs;
 
+    public GameObject[] powerUps;
+    public GameObject[] collectibles;
+
 	// Use this for initialization
 	void Start () {
         hero = GameObject.Find("Hero");
         hs = hero.GetComponent<heroScript>();
         Debug.Log("EventManager: Hero and their script found.");
         selfinit = true;
+
+        powerUps = GameObject.FindGameObjectsWithTag("powerUp");
+        //No collectibles yet
+        //collectibles = GameObject.FindGameObjectsWithTag("collectibles");
 	}
 	
 	// Update is called once per frame
@@ -28,6 +35,7 @@ public class evntManager : MonoBehaviour {
 		{
 			Application.Quit();
 		}
+        
 	}
 
 	void PlayParticle(Particle part){
@@ -43,4 +51,8 @@ public class evntManager : MonoBehaviour {
         return false;
 	}
 
+    private void checkForPowerUps()
+    {
+        
+    }
 }
