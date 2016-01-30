@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class hero : MonoBehaviour {
+public class heroScript : MonoBehaviour {
 
     private int health;
     private int maxHealth;
