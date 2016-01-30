@@ -9,9 +9,12 @@ public class envManager : MonoBehaviour {
     {
         get { return selfinit; }
     }
+
+    
+
     // Use this for initialization
     void Start () {
-
+        
         selfinit = true;
 	}
 	
