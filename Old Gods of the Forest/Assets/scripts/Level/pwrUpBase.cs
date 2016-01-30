@@ -12,4 +12,13 @@ public class pwrUpBase : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnCollisionEnter(Collision2D col)
+    {
+        if (col.gameObject.tag == "player")
+        {
+            //let's hide this object
+            gameObject.SetActive(false);
+        }
+    }
 }
