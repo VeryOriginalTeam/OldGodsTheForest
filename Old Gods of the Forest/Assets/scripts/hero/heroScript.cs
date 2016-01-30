@@ -5,11 +5,7 @@ public class heroScript : MonoBehaviour {
 
     private int health;
     private int maxHealth;
-
-<<<<<<< HEAD
-
-=======
->>>>>>> Atro
+	
     public int Health
     {
         get { return health; }
