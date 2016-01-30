@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="64" tileheight="64" nextobjectid="1">
+ <tileset firstgid="1" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="Nimetön kansio/Old Gods of the Forest/Assets/graphics/tileset_tuonela.png" width="642" height="322"/>
+ </tileset>
+ <tileset firstgid="51" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="Nimetön kansio/Old Gods of the Forest/Assets/graphics/tileset_tuonela.png" width="642" height="322"/>
+ </tileset>
+ <tileset firstgid="101" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="Nimetön kansio/Old Gods of the Forest/Assets/graphics/tileset_tuonela.png" width="706" height="322"/>
+ </tileset>
+ <tileset firstgid="156" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="Nimetön kansio/Old Gods of the Forest/Assets/graphics/tileset_tuonela.png" width="706" height="322"/>
+ </tileset>
+ <tileset firstgid="211" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="Nimetön kansio/Old Gods of the Forest/Assets/graphics/tileset_tuonela.png" width="706" height="322"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgw14DbQDRsEogIK7DAwHBtoNowA/CAfGEQxjkzchAhMLJKAYBHyB9sEwTN5sANILIwNDwmwgpre9eUA7gRglHD/TwV6gfw94Au32hNh/wAooJkZn/wPtZjAF4jsMpKchQgCfeZ5UtAcdWAKxFQ67Qfb6omFi8hEAAA8ZAQ==
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFAwXER6C9TFgwKYCFgWGBJBQD2QnE2ssBxOxQ+g5Q72cglgBiYvRLkOhGZHtBdjIj2Yksz4LDH9jcdReiPgFdHAZ0GRgOwMJFCqhOG0hrY7ETG4DZh2wGDBPSO1QBsXEPA6CwYB2k4QFNRwnE5gdygDnQbOR0kY8jLMxp5QAokERiq0IxKG8A3XOAEnPFgPpB2AOIWwnYywC18y4WOz+TaG8eMByB5UQC0F6G2UDsDeSbI4Utsr1mQHGQnYwU+hUEmHDEHyxfoPuXWgCXvTCQTyN7geHMoA0pF7HiPBrlHQAFuzgd
+  </data>
+ </layer>
+</map>
