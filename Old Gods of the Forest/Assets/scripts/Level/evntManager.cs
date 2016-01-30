@@ -35,7 +35,10 @@ public class evntManager : MonoBehaviour {
 		{
 			Application.Quit();
 		}
-        
+        if (Input.GetButtonDown("Fire2"))
+        {
+            hero.GetComponent<heroAbilities>().ActivatePowerUp(true);
+        }
 	}
 
 	void PlayParticle(Particle part){
