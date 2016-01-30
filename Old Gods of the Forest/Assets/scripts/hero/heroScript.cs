@@ -3,6 +3,7 @@ using System.Collections;
 
 public class heroScript : MonoBehaviour {
 
+    public int baseDmg = 50;
     private int health;
     private int maxHealth;
 

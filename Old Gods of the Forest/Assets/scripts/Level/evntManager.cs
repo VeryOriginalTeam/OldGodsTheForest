@@ -35,7 +35,7 @@ public class evntManager : MonoBehaviour {
 		{
 			Application.Quit();
 		}
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("UseAbility"))
         {
             hero.GetComponent<heroAbilities>().ActivatePowerUp(true);
         }
