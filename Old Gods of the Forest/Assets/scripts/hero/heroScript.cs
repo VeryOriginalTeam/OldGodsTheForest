@@ -7,7 +7,6 @@ public class heroScript : MonoBehaviour {
     private int maxHealth;
 
 
-
     public int Health
     {
         get { return health; }
@@ -20,6 +19,7 @@ public class heroScript : MonoBehaviour {
         get { return alive; }
         set { alive = value; }
     }
+	
 
     // Use this for initialization
     void Start () {
@@ -32,6 +32,8 @@ public class heroScript : MonoBehaviour {
     {
         health = health - amount;
         if (health <= 0) alive = false;
+
+		Debug.Log("Hero takes damage");
     }
 
     public void HealHero(int amount)

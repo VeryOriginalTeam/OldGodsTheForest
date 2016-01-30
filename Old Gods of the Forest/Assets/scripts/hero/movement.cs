@@ -9,7 +9,10 @@ public class movement : MonoBehaviour {
 	public float maxSpeed = 5f;
 	public float jumpForce = 400f;
 	public Transform groundCheck;
-	
+	private float jumpTimer;
+	public float jumpTime=0.5f;
+	public bool duobleJumpEnabled = true;
+	private int jumpCounter =0;
 	
 	private bool grounded = false;
 	private Animator anim;
@@ -43,8 +46,9 @@ public class movement : MonoBehaviour {
 		if (jump)
 		{
 			anim.SetTrigger("Jump");
-			rb2d.AddForce(new Vector2(0f, jumpForce));
-			jump = false;
+			//rb2d.AddForce(new Vector2(0f, jumpForce));
+			rb2d.velocity = new Vector2(rb2d.velocity.x,maxSpeed);
+			//jump = false;
 		}
 	}
 
@@ -59,11 +63,28 @@ public class movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-		
-		if (Input.GetButtonDown("Jump")&& grounded)
+
+		jumpTimer -= Time.deltaTime;
+		if ( jumpTimer < 0 )
 		{
+			jump= false;
+		}
+
+		bool groundedBefore = grounded;
+		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+		if (groundedBefore != grounded && grounded == true) {
+			jumpCounter=0;
+		}
+
+		if (Input.GetButtonDown("Jump")&& (grounded || (!jump &&duobleJumpEnabled && jumpCounter <2)))
+		{
+			jumpTimer = jumpTime;
+			jumpCounter++;
 			jump = true;
+		}
+		if(Input.GetButtonUp("Jump"))
+		{
+			jump = false;
 		}
 	}
 	
