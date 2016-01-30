@@ -29,6 +29,18 @@ Old Gods of the Forest/Temp/
 
 Old Gods of the Forest/Androidbuild.apk
 
-Old Gods of the Forest/Library/ScriptAssemblies/Assembly-CSharp.dll
 Old Gods of the Forest/shadercache/
 
+Old Gods of the Forest/player_win_x86_s.pdb
+
+Old Gods of the Forest/player_win_x86.pdb
+
+<<<<<<< HEAD
+Old Gods of the Forest/Androidbuild.apk
+
+*.meta
+=======
+*.meta
+
+Old Gods of the Forest/Assets/textures.meta
+>>>>>>> master
