@@ -3,18 +3,31 @@ using System.Collections;
 
 public class evntManager : MonoBehaviour {
 
-	bool selfinit;
-	Particle[] particles;
+    private bool selfinit;
+
+    public bool Initialized
+    {
+        get { return selfinit; }
+    }
+    Particle[] particles;
 	//Enemy[] enemy;
-	//Hero hero;
+	private GameObject hero;
+    private heroScript hs;
 
 	// Use this for initialization
 	void Start () {
+        hero = GameObject.Find("Hero");
+        hs = hero.GetComponent<heroScript>();
+        Debug.Log("EventManager: Hero and their script found.");
+        selfinit = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetButtonDown("Cancel"))
+		{
+			Application.Quit();
+		}
 	}
 
 	void PlayParticle(Particle part){
