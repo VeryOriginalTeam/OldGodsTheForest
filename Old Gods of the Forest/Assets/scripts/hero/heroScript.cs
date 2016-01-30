@@ -43,7 +43,7 @@ public class heroScript : MonoBehaviour {
         health = health + amount;
         if (health > maxHealth) health = maxHealth;
     }
-	
+
 
 
 }
