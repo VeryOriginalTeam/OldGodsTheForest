@@ -14,6 +14,8 @@ public class heroAbilities : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	/*
     void OnCollisionEnter(Collision col)
     {
         switch (col.gameObject.tag)
@@ -23,4 +25,5 @@ public class heroAbilities : MonoBehaviour {
                 break;
         }
     }
+    */
 }

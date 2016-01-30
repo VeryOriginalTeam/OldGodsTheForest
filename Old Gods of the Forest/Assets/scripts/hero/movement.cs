@@ -19,11 +19,12 @@ public class movement : MonoBehaviour {
 	private Rigidbody2D rb2d;
 	private bool hit = false;
 	private float hitTimer = 0.0f;
-	public float hitTime = 0.5f;
+	public float hitTime = 5.0f;
 	private float landingTimer = 0.0f;
 	public float landingTime = 1.0f;
 	private bool run = false;
 	private bool crouch = false;
+	public float weaponRange =2.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -44,7 +45,7 @@ public class movement : MonoBehaviour {
 			crouch=false;
 			anim.SetBool("crouch",false);
 		}
-		anim.SetFloat("Speed", Mathf.Abs(h));
+		//anim.SetFloat("Speed", Mathf.Abs(h));
 		if (Mathf.Abs (h) > 0.1f) {
 			run = true;
 			anim.SetBool("run",true);
@@ -76,7 +77,10 @@ public class movement : MonoBehaviour {
 			anim.SetBool("hit",true);
 			hit =true;
 			hitTimer=hitTime;
-			Debug.Log ("Hitttttt");
+			if(HitCheck())
+				Debug.Log ("Hitttttt enemy");
+			else
+				Debug.Log ("miss enemy");
 		}
 	}
 
@@ -88,12 +92,34 @@ public class movement : MonoBehaviour {
 		rb2d = GetComponent<Rigidbody2D>();
 		anim.SetBool ("hit",false);
 	}
-	
+
+	bool HitCheck()
+	{
+		Collider[] monsters=Physics.OverlapSphere(transform.position, weaponRange, 1<<LayerMask.NameToLayer("enemyLayer"));
+		bool result = false;
+		for (int i=0; i<monsters.Length; i++) {
+			result=true;
+			monsters[i].gameObject.SendMessage("DamageMonster",3);
+		}
+		return result;
+	}
+
+	void OnCollisionEnter(Collision col)
+	{
+		string colTouch = col.gameObject.tag;
+		Debug.Log ("COllisisioioionn");
+		if (colTouch == "Monster" && hit)
+		{
+			col.gameObject.SendMessage("DamageMonster",10);
+		}
+	}
+
+
 	// Update is called once per frame
 	void Update () 
 	{
-
-
+		
+		
 		if ( jumpTimer > 0 )
 		{
 			jumpTimer -= Time.deltaTime;
@@ -150,8 +176,8 @@ public class movement : MonoBehaviour {
 
 
 	}
-	
-	
+
+
 	
 	
 	void Flip()
