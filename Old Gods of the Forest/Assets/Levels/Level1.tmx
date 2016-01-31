@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="64" tileheight="64" nextobjectid="1">
+ <tileset firstgid="1" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="../graphics/tileset_tuonela.png" width="642" height="322"/>
+ </tileset>
+ <tileset firstgid="51" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="../graphics/tileset_tuonela.png" width="642" height="322"/>
+ </tileset>
+ <tileset firstgid="101" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="../graphics/tileset_tuonela.png" width="706" height="322"/>
+ </tileset>
+ <tileset firstgid="156" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="../graphics/tileset_tuonela.png" width="706" height="322"/>
+ </tileset>
+ <tileset firstgid="211" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="../graphics/tileset_tuonela.png" width="706" height="322"/>
+ </tileset>
+ <tileset firstgid="266" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="../graphics/tileset_tuonela.png" width="769" height="322"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgw14DbQDRsEogIK7DAwHBtoNowA/CAfGEQxjkzchAhMLJKAYBHyB9sEwTN5sANILIwNDwmwgpre9eUA7gRglHD/TwV6gfw94Au32hNh/wAooJkZn/wPtZjAF4jsMpKchQgCfeZ5UtAcdWAKxFQ67Qfb6omFi8hEAAA8ZAQ==
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzFld2twjAMhV1+VBbgbwCeEK90AiQklsgEMAVT3BdGYRCYggU4FjnCCknboJZr6ahN2uSLHccR+Y3NRC5DPFWTHzHJnfwTl8wUdyRy7YtLxWzZNVTecS4l7e+mEBnIp3IMMbssvfDu2vg792vi2m4Y84AWUBvmItJn86qOW/rvZMZ8UT8C3se67q//XdhP2yCXGJcd4rzGcx1hxow8OwfVNLZv0zhz38oO523ae5tXytVYjHuOxxTxp6859crnkavLjzqzecz30CrMbfPilIhFlcEtvL88I6lzZM3WrpWXno1TZi0N7yO0r6o9dG7gimfeI8xHCy59Vh3RRp1w4MofdEC7MrG13C36lVl8cW+EdXKQ2D+ei67uiDDOKS5N7whakf4ti6tCnLUmupSO5uzc5Ps7CmMd81mfT7cAR0I=
+  </data>
+ </layer>
+</map>

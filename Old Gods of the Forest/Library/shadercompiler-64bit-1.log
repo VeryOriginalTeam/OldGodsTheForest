@@ -9,7 +9,3 @@ Cmd: preprocess
   insize=2488 outsize=848 ok=1
 Cmd: preprocess
   insize=601 outsize=247 ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=1939 outsize=1095 kw=PIXELSNAP_ON pd= ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=1939 outsize=6 kw=PIXELSNAP_ON pd= ok=1
