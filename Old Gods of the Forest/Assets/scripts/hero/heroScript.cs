@@ -45,7 +45,7 @@ public class heroScript : MonoBehaviour {
     }
     public void DamageHero(int amount)
     {
-        health = health - amount;
+        health -= amount;
         if (health <= 0) alive = false;
 
 		Debug.Log("Hero takes damage");
@@ -53,7 +53,7 @@ public class heroScript : MonoBehaviour {
 
     public void HealHero(int amount)
     {
-        health = health + amount;
+        health += amount;
         if (health > maxHealth) health = maxHealth;
     }
 
