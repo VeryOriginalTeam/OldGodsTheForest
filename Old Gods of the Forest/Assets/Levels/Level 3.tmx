@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="64" tileheight="64" nextobjectid="57">
+ <tileset firstgid="1" name="tileset_tuonela2" tilewidth="64" tileheight="64">
+  <image source="../graphics/tileset_tuonela2.png" width="642" height="322"/>
+ </tileset>
+ <tileset firstgid="51" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="../graphics/tileset_tuonela.png" width="769" height="322"/>
+ </tileset>
+ <layer name="Tile Layer 2" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4A6IJ6KZmVSwTxWBoYESQaGBTBsy8BwgApOGxIgbAT5lRYgbKAdQCSQGKRmqVLRrFEwCoYqAAB2DQZ2
+  </data>
+ </layer>
+ <layer name="Tile Layer 1" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztlN8NwiAQxq+RrqAlZQMefdUNTNzAsIDO5CgdzUMhXvH4G+KD8ZIvEAq/A/pxAP/45VAAd04SwByx7ZXngkKekS/2SmNDHss7J76PkfETwGK1r8wnI+MbJ13JE515jvlxpxyPzsO+qckR8ibXKoafYvs5sfMqZg3NV7q/HC/HpDzxfhtZ3wrG56nztsa3eHNHngjubkCf4HczNPC4f7djctbsr5Vna87W6QrPmsF64LaeY6jovcRqTmv04FFfYz1fStdNQRv2U+H9UeqRHOuAan03muxFByzPmyv0AFIsNvM=
+  </data>
+ </layer>
+ <objectgroup name="HitBox">
+  <object id="4" x="272" y="1801.33" width="88" height="93.3333">
+   <ellipse/>
+  </object>
+  <object id="13" x="328" y="1737.33" width="106.667" height="97.3333">
+   <ellipse/>
+  </object>
+  <object id="14" x="6.66667" y="1860" width="561.333" height="118.667"/>
+  <object id="15" x="348" y="1746.67" width="196" height="114.667"/>
+  <object id="16" x="538.667" y="1770.67" width="26.6667" height="89.3333"/>
+  <object id="17" x="646.667" y="1670.67" width="48" height="52"/>
+  <object id="18" x="776" y="1672" width="50.6667" height="52"/>
+  <object id="19" x="966.667" y="1674.67" width="50.6667" height="49.3333"/>
+  <object id="20" x="1038.67" y="1610.67" width="233.333" height="48"/>
+  <object id="21" x="1224" y="1420" width="54.6667" height="192"/>
+  <object id="23" x="768" y="1480" width="314.667" height="50.6667"/>
+  <object id="24" x="605.333" y="1302.67" width="137.333" height="225.333"/>
+  <object id="25" x="738.667" y="1337.33" width="24" height="188"/>
+  <object id="26" x="585.333" y="1344" width="20" height="186.667"/>
+  <object id="29" x="585.333" y="1292" width="98.6667" height="106.667">
+   <ellipse/>
+  </object>
+  <object id="34" x="685.333" y="1294.67" width="76" height="104">
+   <ellipse/>
+  </object>
+  <object id="36" x="112" y="1484" width="485.333" height="44"/>
+  <object id="37" x="10.6667" y="582.667" width="169.333" height="937.333"/>
+  <object id="38" x="264" y="1356" width="50.6667" height="48"/>
+  <object id="39" x="333.333" y="1292" width="105.333" height="44"/>
+  <object id="40" x="457.333" y="1232" width="48" height="41.3333"/>
+  <object id="41" x="520" y="1162.67" width="45.3333" height="48"/>
+  <object id="42" x="205.333" y="1034.67" width="296" height="41.3333"/>
+  <object id="43" x="266.667" y="840" width="44" height="52"/>
+  <object id="44" x="341.333" y="778.667" width="225.333" height="42.6667"/>
+  <object id="45" x="589.333" y="841.333" width="170.667" height="50.6667"/>
+  <object id="46" x="778.667" y="902.667" width="48" height="54.6667"/>
+  <object id="47" x="848" y="970.667" width="38.6667" height="49.3333"/>
+  <object id="48" x="901.333" y="1026.67" width="445.333" height="57.3333"/>
+  <object id="49" x="1161.33" y="838.667" width="185.333" height="54.6667"/>
+  <object id="50" x="970.667" y="709.333" width="236" height="53.3333"/>
+  <object id="51" x="902.667" y="518.667" width="54.6667" height="181.333"/>
+  <object id="52" x="449.333" y="446.667" width="441.333" height="61.3333"/>
+  <object id="53" x="4" y="390.667" width="501.333" height="52"/>
+  <object id="54" x="457.333" y="512" width="44" height="118.667"/>
+  <object id="55" x="200" y="578.667" width="306.667" height="52"/>
+ </objectgroup>
+ <objectgroup name="GhostWalk_HitBox">
+  <object id="56" x="392" y="830.667" width="52" height="198.667"/>
+ </objectgroup>
+</map>

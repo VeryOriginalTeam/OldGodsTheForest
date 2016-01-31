@@ -20,12 +20,9 @@ ExportedObj/
 
 
 # Unity3D generated meta files
-*.pidb.meta
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
-Old Gods of the Forest/Library/metadata/
-Old Gods of the Forest/Temp/UnityTempFile-10e4fd3b2a72d457aa164eeeef3de5ca
 
 Old Gods of the Forest/Temp/
 
@@ -37,8 +34,15 @@ Old Gods of the Forest/player_win_x86_s.pdb
 
 Old Gods of the Forest/player_win_x86.pdb
 
+<<<<<<< HEAD
+=======
 Old Gods of the Forest/Androidbuild.apk
+<<<<<<< HEAD
 
 *.meta
 
 Old Gods of the Forest/Assets/textures.meta
+=======
+>>>>>>> Emmi
+Old Gods of the Forest/Library/UnityAssemblies/
+>>>>>>> origin/Timo

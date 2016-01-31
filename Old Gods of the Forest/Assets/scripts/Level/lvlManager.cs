@@ -26,7 +26,7 @@ public class lvlManager : MonoBehaviour {
         {
             Debug.Log("LevelManager: waiting for eventManager");
         }
-
+        
         //When other scripts have initialized themselves
         if (envManager.Initialized && evntManager.Initialized){
             Debug.Log("Managers are up, let's get this rolling");

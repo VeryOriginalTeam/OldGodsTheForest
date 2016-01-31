@@ -9,12 +9,18 @@ public class ai : MonoBehaviour {
 	public float jumpForce = 400f;
 	public Transform groundCheck;
 	public Transform edgeCheck;
+	public Transform edgeCheckStart;
+	public Transform wallCheck;
+
+	public float fadeOutTime = 1.0f;
+	private float fadeOutTimer = 0.0f;
 
 	private float speed = -1.0f;
 	
 	private bool grounded1 = false;
 	private Animator anim;
 	private Rigidbody2D rb2d;
+	private enemy enemyScript =null;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +32,7 @@ public class ai : MonoBehaviour {
 	{
 		anim = GetComponent<Animator>();
 		rb2d = GetComponent<Rigidbody2D>();
+		enemyScript = gameObject.GetComponent<enemy> ();
 	}
 	
 	// Update is called once per frame
@@ -36,9 +43,11 @@ public class ai : MonoBehaviour {
 
 		//float h = Input.GetAxis("Horizontal");
 		float h = 0.0f;
-		if(grounded1)
+		//Debug.Log ("ene"+enemyScript);
+		//Debug.Log("enemy alive "+enemyScript.Alive);
+		if(grounded1 && enemyScript.Alive)
 			h=speed;
-		anim.SetFloat("Speed", Mathf.Abs(h));
+		//anim.SetFloat("Speed", Mathf.Abs(h));
 		
 		if (h * rb2d.velocity.x < maxSpeed)
 			rb2d.AddForce(Vector2.right * h * moveForce);
@@ -46,17 +55,34 @@ public class ai : MonoBehaviour {
 		if (Mathf.Abs (rb2d.velocity.x) > maxSpeed)
 			rb2d.velocity = new Vector2(Mathf.Sign (rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
 
-		if(grounded1)
-		if(!Physics2D.Linecast(transform.position, edgeCheck.position, 1 << LayerMask.NameToLayer("Ground")))
-		{
-			Flip ();
+		if (grounded1) {
+			if (!Physics2D.Linecast (edgeCheckStart.position, edgeCheck.position, 1 << LayerMask.NameToLayer ("Ground"))) {
+				Flip ();
+			}
+			if(Physics2D.Linecast (transform.position, wallCheck.position, 1 << LayerMask.NameToLayer ("Ground"))){
+				Flip ();
+			}
 		}
-		
 		if (jump)
 		{
 			anim.SetTrigger("Jump");
 			rb2d.AddForce(new Vector2(0f, jumpForce));
 			jump = false;
+		}
+
+		if (fadeOutTimer > 0) {
+			fadeOutTimer-=Time.deltaTime;
+			if(fadeOutTimer<=0)
+			{
+				Destroy(gameObject);
+			}
+		}
+
+		if (enemyScript.Alive == false) {
+			anim.SetBool("dead",true);
+			if(fadeOutTimer==0){
+				fadeOutTimer=fadeOutTime;
+			}
 		}
 	}
 
