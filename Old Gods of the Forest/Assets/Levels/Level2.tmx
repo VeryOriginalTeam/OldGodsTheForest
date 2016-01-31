@@ -4,17 +4,11 @@
   <image source="../graphics/tileset_tuonela2.png" width="642" height="322"/>
  </tileset>
  <tileset firstgid="51" name="tileset_tuonela" tilewidth="64" tileheight="64">
-<<<<<<< HEAD
-  <image source="../graphics/tileset_tuonela.png" width="706" height="322"/>
- </tileset>
- <tileset firstgid="106" name="tileset_tuonela" tilewidth="64" tileheight="64">
   <image source="../graphics/tileset_tuonela.png" width="769" height="322"/>
-=======
-  <image source="Nimetön kansio/Old Gods of the Forest/Assets/graphics/tileset_tuonela.png" width="769" height="322"/>
  </tileset>
  <tileset firstgid="111" name="tileset_tuonela" tilewidth="64" tileheight="64">
-  <image source="Nimetön kansio/Old Gods of the Forest/Assets/graphics/tileset_tuonela.png" width="769" height="322"/>
->>>>>>> Jaakko
+  <image source="../graphics/tileset_tuonela.png" width="769" height="322"/>
+
  </tileset>
  <layer name="Alus-Vesi" width="30" height="20">
   <data encoding="base64" compression="zlib">
