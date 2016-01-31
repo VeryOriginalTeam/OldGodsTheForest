@@ -3,9 +3,21 @@ using System.Collections;
 
 public class heroScript : MonoBehaviour {
 
+    public int baseDmg = 50;
     private int health;
     private int maxHealth;
-	
+
+    private int dmgOut;
+
+    private int xtraDamageUses;
+    public int xtraDamage;
+
+    public int DamageOutput
+    {
+        get { return dmgOut; }
+        set { dmgOut = value; }
+    }
+
     public int Health
     {
         get { return health; }
@@ -24,6 +36,7 @@ public class heroScript : MonoBehaviour {
     void Start () {
         maxHealth = 3;
         health = maxHealth;
+        DamageOutput = baseDmg;
 	}
 
     void Update()
@@ -44,6 +57,23 @@ public class heroScript : MonoBehaviour {
         if (health > maxHealth) health = maxHealth;
     }
 
+    public void SetExtraDamage(int damage, int uses)
+    {
+        DamageOutput += damage;
+        xtraDamageUses = uses;
+    }
 
+    public int Attack()
+    {
+        if(xtraDamageUses > 0)
+        {
+            return DamageOutput;
+        }
+        else
+        {
+            DamageOutput = baseDmg;
+            return baseDmg;
+        }
+    }
 
 }
