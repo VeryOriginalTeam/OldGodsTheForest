@@ -10,7 +10,7 @@ public class enemy : MonoBehaviour {
 		get { return health; }
 		set { health = value; }
 	}
-	private bool alive;
+	private bool alive=true;
 	
 	public bool Alive
 	{
@@ -23,6 +23,7 @@ public class enemy : MonoBehaviour {
 	void Start () {
 		maxHealth = 3;
 		health = maxHealth;
+		Alive = true;
 	}
 
 

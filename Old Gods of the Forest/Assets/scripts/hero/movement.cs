@@ -9,6 +9,7 @@ public class movement : MonoBehaviour {
 	public float maxSpeed = 5f;
 	public float jumpForce = 400f;
 	public Transform groundCheck;
+	public Transform hitCheck;
 	private float jumpTimer;
 	public float jumpTime=0.5f;
 	public bool doubleJumpEnabled = true;
@@ -95,12 +96,24 @@ public class movement : MonoBehaviour {
 
 	bool HitCheck()
 	{
+		RaycastHit2D hit= Physics2D.Linecast(transform.position, hitCheck.position, 1 << LayerMask.NameToLayer("enemyLayer"));
+		bool result = hit;
+		if(result)
+		{
+				Debug.Log ("Hitmonster");
+			hit.collider.gameObject.SendMessage ("DamageMonster", 10);
+		}
+		else{
+				Debug.Log("missed monster");
+		}
+		/*
 		Collider[] monsters=Physics.OverlapSphere(transform.position, weaponRange, 1<<LayerMask.NameToLayer("enemyLayer"));
 		bool result = false;
 		for (int i=0; i<monsters.Length; i++) {
 			result=true;
 			monsters[i].gameObject.SendMessage("DamageMonster",3);
 		}
+		*/
 		return result;
 	}
 
