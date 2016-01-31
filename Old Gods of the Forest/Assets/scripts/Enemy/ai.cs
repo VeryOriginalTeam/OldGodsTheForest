@@ -10,6 +10,7 @@ public class ai : MonoBehaviour {
 	public Transform groundCheck;
 	public Transform edgeCheck;
 	public Transform edgeCheckStart;
+	public Transform wallCheck;
 
 	public float fadeOutTime = 1.0f;
 	private float fadeOutTimer = 0.0f;
@@ -54,12 +55,14 @@ public class ai : MonoBehaviour {
 		if (Mathf.Abs (rb2d.velocity.x) > maxSpeed)
 			rb2d.velocity = new Vector2(Mathf.Sign (rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
 
-		if(grounded1)
-		if(!Physics2D.Linecast(edgeCheckStart.position, edgeCheck.position, 1 << LayerMask.NameToLayer("Ground")))
-		{
-			Flip ();
+		if (grounded1) {
+			if (!Physics2D.Linecast (edgeCheckStart.position, edgeCheck.position, 1 << LayerMask.NameToLayer ("Ground"))) {
+				Flip ();
+			}
+			if(Physics2D.Linecast (transform.position, wallCheck.position, 1 << LayerMask.NameToLayer ("Ground"))){
+				Flip ();
+			}
 		}
-		
 		if (jump)
 		{
 			anim.SetTrigger("Jump");

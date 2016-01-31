@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e2b384835998b4d818201331380b0760
-timeCreated: 1454227676
+timeCreated: 1454241936
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -88,7 +88,7 @@ TextureImporter:
         y: 993
         width: 279
         height: 251
-      alignment: 7
+      alignment: 9
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_sheet_movement_3
@@ -108,8 +108,8 @@ TextureImporter:
         y: 559
         width: 182
         height: 207
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: -.150000006}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_sheet_movement_5
       rect:
