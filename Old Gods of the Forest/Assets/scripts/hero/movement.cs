@@ -9,12 +9,23 @@ public class movement : MonoBehaviour {
 	public float maxSpeed = 5f;
 	public float jumpForce = 400f;
 	public Transform groundCheck;
-	
+	private float jumpTimer;
+	public float jumpTime=0.5f;
+	public bool doubleJumpEnabled = true;
+	private int jumpCounter =0;
 	
 	private bool grounded = false;
 	private Animator anim;
 	private Rigidbody2D rb2d;
-	
+	private bool hit = false;
+	private float hitTimer = 0.0f;
+	public float hitTime = 5.0f;
+	private float landingTimer = 0.0f;
+	public float landingTime = 1.0f;
+	private bool run = false;
+	private bool crouch = false;
+	public float weaponRange =2.0f;
+
 	// Use this for initialization
 	void Start () {
         //Get the starting position from EventManager.
@@ -26,9 +37,22 @@ public class movement : MonoBehaviour {
 	void FixedUpdate()
 	{
 		float h = Input.GetAxis("Horizontal");
-		
-		anim.SetFloat("Speed", Mathf.Abs(h));
-		
+		float v = Input.GetAxis ("Vertical");
+		if (v < 0) {
+			crouch = true;
+			anim.SetBool("crouch",true);
+		} else {
+			crouch=false;
+			anim.SetBool("crouch",false);
+		}
+		//anim.SetFloat("Speed", Mathf.Abs(h));
+		if (Mathf.Abs (h) > 0.1f) {
+			run = true;
+			anim.SetBool("run",true);
+		} else {
+			run =false;
+			anim.SetBool("run",false);
+		}
 		if (h * rb2d.velocity.x < maxSpeed)
 			rb2d.AddForce(Vector2.right * h * moveForce);
 		
@@ -43,8 +67,20 @@ public class movement : MonoBehaviour {
 		if (jump)
 		{
 			anim.SetTrigger("Jump");
-			rb2d.AddForce(new Vector2(0f, jumpForce));
-			jump = false;
+			//rb2d.AddForce(new Vector2(0f, jumpForce));
+			rb2d.velocity = new Vector2(rb2d.velocity.x,maxSpeed);
+			//jump = false;
+		}
+
+		if (Input.GetButtonDown ("Fire1") && !hit) 
+		{
+			anim.SetBool("hit",true);
+			hit =true;
+			hitTimer=hitTime;
+			if(HitCheck())
+				Debug.Log ("Hitttttt enemy");
+			else
+				Debug.Log ("miss enemy");
 		}
 	}
 
@@ -54,20 +90,94 @@ public class movement : MonoBehaviour {
 	{
 		anim = GetComponent<Animator>();
 		rb2d = GetComponent<Rigidbody2D>();
+		anim.SetBool ("hit",false);
 	}
-	
+
+	bool HitCheck()
+	{
+		Collider[] monsters=Physics.OverlapSphere(transform.position, weaponRange, 1<<LayerMask.NameToLayer("enemyLayer"));
+		bool result = false;
+		for (int i=0; i<monsters.Length; i++) {
+			result=true;
+			monsters[i].gameObject.SendMessage("DamageMonster",3);
+		}
+		return result;
+	}
+
+	void OnCollisionEnter(Collision col)
+	{
+		string colTouch = col.gameObject.tag;
+		Debug.Log ("COllisisioioionn");
+		if (colTouch == "Monster" && hit)
+		{
+			col.gameObject.SendMessage("DamageMonster",10);
+		}
+	}
+
+
 	// Update is called once per frame
 	void Update () 
 	{
-		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 		
-		if (Input.GetButtonDown("Jump")&& grounded)
+		
+		if ( jumpTimer > 0 )
 		{
-			jump = true;
+			jumpTimer -= Time.deltaTime;
+			if(jumpTimer<=0)
+				jump= false;
 		}
+
+
+		if (hitTimer > 0) {
+			hitTimer -= Time.deltaTime;
+			if(hitTimer<= 0)
+			{
+				hit=false;
+				anim.SetBool ("hit",false);
+			}
+		}
+
+		if (landingTimer > 0) {
+			landingTimer -= Time.deltaTime;
+			if(landingTimer<= 0)
+			{
+				hit=false;
+				anim.SetBool ("landing",false);
+			}
+		}
+
+		bool groundedBefore = grounded;
+		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+
+		if (groundedBefore != grounded && grounded == true) {
+			jumpCounter=0;
+			anim.SetBool("landing",true);
+			landingTimer = landingTime;
+		}
+
+		
+		if (grounded) {
+			anim.SetBool("jump",false);
+		}else{
+			anim.SetBool("jump",true);
+		}
+
+		if (Input.GetButtonDown("Jump")&& (grounded || (!jump &&doubleJumpEnabled && jumpCounter <2)))
+		{
+			jumpTimer = jumpTime;
+			jumpCounter++;
+			jump = true;
+
+		}
+		if(Input.GetButtonUp("Jump"))
+		{
+			jump = false;
+		}
+
+
 	}
-	
-	
+
+
 	
 	
 	void Flip()

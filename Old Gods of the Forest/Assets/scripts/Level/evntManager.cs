@@ -24,7 +24,7 @@ public class evntManager : MonoBehaviour {
         Debug.Log("EventManager: Hero and their script found.");
         selfinit = true;
 
-        powerUps = GameObject.FindGameObjectsWithTag("powerUp");
+        //powerUps = GameObject.FindGameObjectsWithTag("powerUp");
         //No collectibles yet
         //collectibles = GameObject.FindGameObjectsWithTag("collectibles");
 	}

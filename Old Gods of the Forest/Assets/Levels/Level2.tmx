@@ -16,17 +16,17 @@
  </layer>
  <layer name="Tile Layer 4" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFhIA2A0MCCDMSUMfCwLAAiBOoZa8NA8MBJiAWJcEOkLwkEqaWWygFtkAsMdCOGAWjYBSMglEwCugEANHeCB8=
+   eJxjYBgFhIA2A0MCCDMSUMfCwLAAiBOoZa8YEDMxMBwQJcEOkLwkEibHXlZyNBEAtkAsQQNzR8EoGAWjYBSMgsEIAP4ZBz4=
   </data>
  </layer>
  <layer name="Tile Layer 1" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYEAF2gwDA0btxQTFDAwHBsJeWgCQvRIDZC8hIDOM7CUGYLM3mIEhQRsJB5NptjaaOYSwDRAzA/UxQ/QuWAKkWYE0MXYB9S5gAuYRUjDIDmQcTKRdIPdxQO0kVg81AC3tBIZzgiTQXGzhTW9/DkUgCkxPjANgLzDdHgDGDwMTFJPjBmT9xGJYXmVngKRLUBknRyLmgOqHmQMzC9lcdjzq2Mm0F9kcWHmDzS5kd8AwMwX2AgCvdSzA
+   eJxjYEAF2gwDA0btxQRiA2QvK43slaCBucTYSwjIDCN7iQHY7A1mYEjQRsLBZJqtjWYOIWwDxMxAfcwQvQuWMIDT3wJi7ALqXcDEwHCAFAyyAxkHE2kXyH0cUDuJ1UMNQEs7geGcIAk0F1t409ufQxGIAtMT4wDYC0y3B4Dxw8AExeS4AVk/sRiWV9kZIOkSVMbJkYg5oPph5sDMQjaXHY86djLtRTYHVt5gswvZHTDMTIG9ADCFK6g=
   </data>
  </layer>
  <layer name="tilelayer" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjZmBgYEbC9ALMDEPD3mAGhgR628sKtHMpNSwlwl4WBoYFQPsWIItJ0sheCQJ6aGUvPcBgsdeGAZxm6W4vzG58QAstnVFq7ygYBaNgFAxmAAAxWwVq
+   eJxjZmBgYEbC9ALMDEPD3mAGhgR628sKtHMpkBajg70sDAwLgPYtQLOfJvZKENAjSSN76QEGi702DOA0S3d7YXbjA1po6YxSe0fBKBgFo2AwAwBKQwVs
   </data>
  </layer>
 </map>

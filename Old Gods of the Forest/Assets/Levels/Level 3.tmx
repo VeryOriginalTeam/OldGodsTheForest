@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="64" tileheight="64" nextobjectid="1">
+ <tileset firstgid="1" name="tileset_tuonela2" tilewidth="64" tileheight="64">
+  <image source="../graphics/tileset_tuonela2.png" width="642" height="322"/>
+ </tileset>
+ <tileset firstgid="51" name="tileset_tuonela" tilewidth="64" tileheight="64">
+  <image source="../graphics/tileset_tuonela.png" width="769" height="322"/>
+ </tileset>
+ <layer name="Tile Layer 2" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4ByoA/EtlQ0LxOI/Sk0g5WBIUGSgWEBDAPdd4AKThsSIGwE+ZUWIGygHUAkkBikZqlS0axRMAqGKgAAZo0Gcw==
+  </data>
+ </layer>
+ <layer name="Tile Layer 1" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztlNsNwyAMRR2VrNAGhQ2yQrsLC6QzdZSMVtOC6lDzlNWPqJauQAkc87gY4B9HDgPw4KQB7A1byVzIs/rN3mkUzuNiTHw/eS2NPC3MU8I8z/w6U45Hx2HftuSIeZNvDcPPscOY1H4NM4fmq11fiVdiUp76vI2ibxXj89x+e+NXvFmQp6KzG9An+N8OHTzu7i5Mzpb19fJczTl7rfCqGawH7vsxloqeS6rm9IYEj/oa6/lWO2+K2rifi+CPWo+UWOHOe97NQtbidGV4c4OeDe0zNQ==
+  </data>
+ </layer>
+</map>

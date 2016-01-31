@@ -16,7 +16,7 @@
   <image source="../graphics/tileset_tuonela.png" width="706" height="322"/>
  </tileset>
  <tileset firstgid="266" name="tileset_tuonela" tilewidth="64" tileheight="64">
-  <image source="Nimetön kansio/Old Gods of the Forest/Assets/graphics/tileset_tuonela.png" width="769" height="322"/>
+  <image source="../graphics/tileset_tuonela.png" width="769" height="322"/>
  </tileset>
  <layer name="Tile Layer 1" width="30" height="20">
   <data encoding="base64" compression="zlib">

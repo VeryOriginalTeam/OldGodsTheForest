@@ -15,6 +15,7 @@ public class ai : MonoBehaviour {
 	private bool grounded1 = false;
 	private Animator anim;
 	private Rigidbody2D rb2d;
+	private enemy enemyScript =null;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +27,7 @@ public class ai : MonoBehaviour {
 	{
 		anim = GetComponent<Animator>();
 		rb2d = GetComponent<Rigidbody2D>();
+		enemyScript = gameObject.GetComponent<enemy> ();
 	}
 	
 	// Update is called once per frame
@@ -36,9 +38,9 @@ public class ai : MonoBehaviour {
 
 		//float h = Input.GetAxis("Horizontal");
 		float h = 0.0f;
-		if(grounded1)
+		if(grounded1 )
 			h=speed;
-		anim.SetFloat("Speed", Mathf.Abs(h));
+		//anim.SetFloat("Speed", Mathf.Abs(h));
 		
 		if (h * rb2d.velocity.x < maxSpeed)
 			rb2d.AddForce(Vector2.right * h * moveForce);

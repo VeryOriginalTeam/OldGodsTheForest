@@ -13,7 +13,7 @@ public class pwrUpBase : MonoBehaviour {
 	
 	}
 
-    void OnCollisionEnter(Collision2D col)
+    void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "player")
         {
