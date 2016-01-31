@@ -15,5 +15,10 @@ public class basicSword : MonoBehaviour {
 	
 	}
 
+    public void IncreaseHeroDamage()
+    {
+        GameObject.FindGameObjectWithTag("player").GetComponent<heroScript>().SetExtraDamage(damage, uses);
+        GameObject.FindGameObjectWithTag("player").GetComponent<heroAbilities>().extraDmg = true;
+    }
     
 }

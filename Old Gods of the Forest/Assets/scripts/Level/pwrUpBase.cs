@@ -3,6 +3,7 @@ using System.Collections;
 
 public class pwrUpBase : MonoBehaviour {
 
+    bool pickedUp;
 	// Use this for initialization
 	void Start () {
 	
@@ -18,7 +19,9 @@ public class pwrUpBase : MonoBehaviour {
         if (col.gameObject.tag == "player")
         {
             //let's hide this object
-            gameObject.SetActive(false);
+            gameObject.GetComponent<SpriteRenderer>().sprite = null;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            pickedUp = true;
         }
     }
 }

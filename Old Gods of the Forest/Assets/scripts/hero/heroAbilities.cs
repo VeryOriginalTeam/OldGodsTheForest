@@ -3,10 +3,10 @@ using System.Collections;
 
 public class heroAbilities : MonoBehaviour {
 
-    protected bool doubleJump = false;
-    protected bool shadowWalk = false;
-    protected bool extraDmg = false;
-    protected bool powerActive; //This is true if one of the powers is active
+    public bool doubleJump = false;
+    public bool shadowWalk = false;
+    public bool extraDmg = false;
+    public bool powerActive; //This is true if one of the powers is active
 
     private float shadowWalkTime = 5f; //in seconds
 
@@ -75,6 +75,11 @@ public class heroAbilities : MonoBehaviour {
         if (doubleJump)
         {
             //TODO
+        }
+        if (extraDmg)
+        {
+            heroScript hs = gameObject.GetComponent<heroScript>();
+            hs.DamageOutput += hs.xtraDamage;
         }
     }
 
